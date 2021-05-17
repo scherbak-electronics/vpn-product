@@ -1,5 +1,6 @@
 {
     "name": "wserbrand/module-vpnproduct",
+    "version": "1.0.0",
     "description": "VpnProduct API",
     "type": "magento2-module",
     "minimum-stability": "dev",
