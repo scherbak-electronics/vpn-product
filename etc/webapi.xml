@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+	<route url="/V1/wserbrand-vpnproduct/vpnproduct" method="GET">
+		<service class="Wserbrand\VpnProduct\Api\VpnProductManagementInterface" method="getVpnProduct"/>
+		<resources>
+			<resource ref="anonymous"/>
+		</resources>
+	</route>
+	<route url="/V1/wserbrand-vpnproduct/vpnproduct" method="POST">
+		<service class="Wserbrand\VpnProduct\Api\VpnProductRepositoryInterface" method="save"/>
+		<resources>
+			<resource ref="Wserbrand_VpnProduct::VpnProduct_save"/>
+		</resources>
+	</route>
+	<route url="/V1/wserbrand-vpnproduct/vpnproduct/search" method="GET">
+		<service class="Wserbrand\VpnProduct\Api\VpnProductRepositoryInterface" method="getList"/>
+		<resources>
+			<resource ref="Wserbrand_VpnProduct::VpnProduct_view"/>
+		</resources>
+	</route>
+	<route url="/V1/wserbrand-vpnproduct/vpnproduct/:vpnproductId" method="GET">
+		<service class="Wserbrand\VpnProduct\Api\VpnProductRepositoryInterface" method="get"/>
+		<resources>
+			<resource ref="Wserbrand_VpnProduct::VpnProduct_view"/>
+		</resources>
+	</route>
+	<route url="/V1/wserbrand-vpnproduct/vpnproduct/:vpnproductId" method="PUT">
+		<service class="Wserbrand\VpnProduct\Api\VpnProductRepositoryInterface" method="save"/>
+		<resources>
+			<resource ref="Wserbrand_VpnProduct::VpnProduct_update"/>
+		</resources>
+	</route>
+	<route url="/V1/wserbrand-vpnproduct/vpnproduct/:vpnproductId" method="DELETE">
+		<service class="Wserbrand\VpnProduct\Api\VpnProductRepositoryInterface" method="deleteById"/>
+		<resources>
+			<resource ref="Wserbrand_VpnProduct::VpnProduct_delete"/>
+		</resources>
+	</route>
+</routes>

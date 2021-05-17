@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+	<table name="wserbrand_vpnproduct_vpnproduct" resource="default" engine="innodb" comment="wserbrand_vpnproduct_vpnproduct Table">
+		<column xsi:type="smallint" name="vpnproduct_id" padding="6" unsigned="true" nullable="false" identity="true" comment="Entity Id"/>
+		<constraint xsi:type="primary" referenceId="PRIMARY">
+			<column name="vpnproduct_id"/>
+		</constraint>
+		<column name="entity_id" nullable="true" xsi:type="int" comment="entity_id" identity="false"/>
+		<column name="copywrite_info" nullable="true" xsi:type="text" comment="copywrite_info"/>
+		<column name="vpn" nullable="true" xsi:type="int" comment="vpn" identity="false"/>
+	</table>
+</schema>

@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<preference for="Wserbrand\VpnProduct\Api\VpnProductManagementInterface" type="Wserbrand\VpnProduct\Model\VpnProductManagement"/>
+	<preference for="Wserbrand\VpnProduct\Api\VpnProductRepositoryInterface" type="Wserbrand\VpnProduct\Model\VpnProductRepository"/>
+	<preference for="Wserbrand\VpnProduct\Api\Data\VpnProductInterface" type="Wserbrand\VpnProduct\Model\Data\VpnProduct"/>
+	<preference for="Wserbrand\VpnProduct\Api\Data\VpnProductSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+</config>

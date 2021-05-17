@@ -1,0 +1,21 @@
+{
+    "name": "wserbrand/module-vpnproduct",
+    "description": "VpnProduct API",
+    "type": "magento2-module",
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Wserbrand\\VpnProduct\\": ""
+        }
+    },
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/scherbak-electronics/vpn-product.git"
+        }
+    ]
+}
