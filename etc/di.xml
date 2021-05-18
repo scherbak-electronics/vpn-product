@@ -4,4 +4,7 @@
 	<preference for="Wserbrand\VpnProduct\Api\VpnProductRepositoryInterface" type="Wserbrand\VpnProduct\Model\VpnProductRepository"/>
 	<preference for="Wserbrand\VpnProduct\Api\Data\VpnProductInterface" type="Wserbrand\VpnProduct\Model\Data\VpnProduct"/>
 	<preference for="Wserbrand\VpnProduct\Api\Data\VpnProductSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+	<type name="Wserbrand\VpnProduct\Model\ResourceModel\VpnProduct">
+		<plugin name="vpnproduct_get_publisher" type="Wserbrand\VpnProduct\Plugin\GetVpnProductPlugin"/>
+	</type>
 </config>

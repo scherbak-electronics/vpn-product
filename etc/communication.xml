@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Communication/etc/communication.xsd">
+    <topic name="vpnproduct.get" is_synchronus="false" request="Wserbrand\VpnProduct\Model\VpnProduct">
+        <handler
+                name="vpnproduct.get"
+                type="Wserbrand\VpnProduct\Api\Data\VpnProductInterface"
+                method="get" />
+    </topic>
+</config>

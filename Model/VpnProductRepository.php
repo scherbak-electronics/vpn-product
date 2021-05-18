@@ -24,7 +24,6 @@ use Wserbrand\VpnProduct\Model\ResourceModel\VpnProduct\CollectionFactory as Vpn
 
 class VpnProductRepository implements VpnProductRepositoryInterface
 {
-
     protected $resource;
 
     protected $extensibleDataObjectConverter;
@@ -45,7 +44,6 @@ class VpnProductRepository implements VpnProductRepositoryInterface
     protected $extensionAttributesJoinProcessor;
 
     private $collectionProcessor;
-
 
     /**
      * @param ResourceVpnProduct $resource
@@ -96,15 +94,15 @@ class VpnProductRepository implements VpnProductRepositoryInterface
             $storeId = $this->storeManager->getStore()->getId();
             $vpnProduct->setStoreId($storeId);
         } */
-        
+
         $vpnProductData = $this->extensibleDataObjectConverter->toNestedArray(
             $vpnProduct,
             [],
             \Wserbrand\VpnProduct\Api\Data\VpnProductInterface::class
         );
-        
+
         $vpnProductModel = $this->vpnProductFactory->create()->setData($vpnProductData);
-        
+
         try {
             $this->resource->save($vpnProductModel);
         } catch (\Exception $exception) {
@@ -136,22 +134,22 @@ class VpnProductRepository implements VpnProductRepositoryInterface
         \Magento\Framework\Api\SearchCriteriaInterface $criteria
     ) {
         $collection = $this->vpnProductCollectionFactory->create();
-        
+
         $this->extensionAttributesJoinProcessor->process(
             $collection,
             \Wserbrand\VpnProduct\Api\Data\VpnProductInterface::class
         );
-        
+
         $this->collectionProcessor->process($criteria, $collection);
-        
+
         $searchResults = $this->searchResultsFactory->create();
         $searchResults->setSearchCriteria($criteria);
-        
+
         $items = [];
         foreach ($collection as $model) {
             $items[] = $model->getDataModel();
         }
-        
+
         $searchResults->setItems($items);
         $searchResults->setTotalCount($collection->getSize());
         return $searchResults;
@@ -184,4 +182,3 @@ class VpnProductRepository implements VpnProductRepositoryInterface
         return $this->delete($this->get($vpnProductId));
     }
 }
-
